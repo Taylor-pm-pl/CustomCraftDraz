@@ -16,3 +16,5 @@ Item_1:
     result:  ["278:0", 1, 17, 2]
 ...
 ```
+# Update next !
+- Update commands setup for shape and result to easy usage!
