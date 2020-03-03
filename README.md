@@ -3,7 +3,7 @@ One plugin custom craft for pmmp
 # Config 
 ```
 ---
-#  1 is name default, you can change name example like: nam, dragovn, ....
+#  Item_1 is name default, you can change name example like: nam, dragovn, ....
 Item_1:
 #----------------------------------------------------------
 #  Item id:meta,  Item xount,  Id enchantment,  Level enchantment     
