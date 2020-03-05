@@ -6,7 +6,7 @@
 #  Item_1 is name default, you can change name example like: nam, dragovn, ....
 Item_1:
 #----------------------------------------------------------
-#  [Item id:meta,  Item xount,  Id enchantment,  Level enchantment]     
+#  [Item id:meta,  Item count,  Id enchantment,  Level enchantment]     
 #  if id & level = 0 -> enchantment not working !
 #----------------------------------------------------------     
     shape:
