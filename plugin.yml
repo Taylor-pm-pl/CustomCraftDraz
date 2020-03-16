@@ -2,5 +2,5 @@ name: CustomCraftDraz
 author: DragoVN
 version: 1.0.2
 api: [3.0.0]
-softdepend: [EconomyAPI]
+softdepend: [PiggyCustomEnchants]
 main: hachkingtohach1\CustomCraft\Main
