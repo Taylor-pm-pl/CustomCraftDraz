@@ -1,7 +1,7 @@
 # CustomCraftDraz
 - One plugin custom craft for pmmp 
 - Email: pnam5005@gmail.com
-- Thanks for using !
+- Thanks for using! <
 # Config 
 ```
 ---
