@@ -4,5 +4,6 @@ branches:
 - master
 projects:
   CustomCraftDraz:
-    path: "mt/CustomCraft.png"
+    path: ""
+    icon: mt/CustomCraft.png
 ...
