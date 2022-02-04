@@ -1,6 +1,6 @@
 name: CustomCraftDraz
-author: DragoVN
+author: [YTBJero, DragoVN]
 version: 1.0.3
-api: [3.0.0]
+api: [4.0.0]
 softdepend: [PiggyCustomEnchants]
-main: hachkingtohach1\CustomCraft\Main
+main: CustomCraft\Main

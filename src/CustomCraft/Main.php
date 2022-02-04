@@ -1,11 +1,15 @@
 <?php
 
-namespace hachkingtohach1\CustomCraft;
+namespace CustomCraft;
 
 use pocketmine\item\Item;
+use pocketmine\item\ItemFactory;
+use pocketmine\item\LegacyStringToItemParser;
 use pocketmine\plugin\PluginBase;
-use pocketmine\inventory\ShapedRecipe;
+use pocketmine\crafting\ShapedRecipe;
 use pocketmine\item\enchantment\{Enchantment,EnchantmentInstance};
+use pocketmine\item\enchantment\StringToEnchantmentParser;
+use pocketmine\data\bedrock\EnchantmentIdMap;
 use DaPigGuy\PiggyCustomEnchants\{CustomEnchantManager,PiggyCustomEnchants,utils\Utils};
 
 class Main extends PluginBase { 
@@ -25,8 +29,9 @@ class Main extends PluginBase {
 	{
 		$this->ce = $this->getServer()->getPluginManager()->getPlugin('PiggyCustomEnchants');
         if($this->ce === null) {
-			$this->getLogger()->warning('You need install plugin PiggyCustomEnchants to use this plugin!');
-            $this->getServer()->shutDown();				
+			return false;
+		} else{
+			return true;
 		}
 	}		
     
@@ -35,7 +40,7 @@ class Main extends PluginBase {
 	 **/
     public function getEnchantment(int $id) 
 	{	
-		$enchantment = Enchantment::getEnchantment($id);	
+		$enchantment = EnchantmentIdMap::getInstance()->fromId($id);
 		return $enchantment;
 	}
     
@@ -44,7 +49,7 @@ class Main extends PluginBase {
 	 **/
     public function getCEnchantment(string $name, $item, int $level) 
 	{
-		$items = Item::fromString($item);
+		$items = LegacyStringToItemParser::getInstance()->parse($item[0]);
 		$enchant = CustomEnchantManager::getEnchantmentByName($name);
         if ($enchant === null) {
 			$this->getLogger()->warning('CE is '.$name.' with level '.$level.' name is null!');
@@ -63,7 +68,7 @@ class Main extends PluginBase {
     
     public function getItem(array $item) : Item 
 	{	
-        $items = Item::fromString($item[0]); 		
+        $items = LegacyStringToItemParser::getInstance()->parse($item[0]); 		
         if(isset($item[1])) { 
 		    $items->setCount((int) $item[1]);
 			foreach($this->getConfig()->getAll() as $craft) {
@@ -73,9 +78,12 @@ class Main extends PluginBase {
 					}
 				}
 		        if($craft["enable_cenchant"] == "true") {
-					foreach ($craft["cenchantment"] as $id => $level) {
-			            $items->addEnchantment(new EnchantmentInstance($this->getCEnchantment($id, $craft["result"][0], $level), $level));
-					}				    
+					if($this->checkPluginNeed() == true)
+					{
+						foreach ($craft["cenchantment"] as $id => $level) {
+			            	$items->addEnchantment(new EnchantmentInstance($this->getCEnchantment($id, $craft["result"][0], $level), $level));
+						}		
+					}		    
 				}
 			}				
         } 
@@ -102,7 +110,7 @@ class Main extends PluginBase {
 			    ), 
 			    [$this->getItem($craft["result"])]
 			);				
-            $this->getServer()->getCraftingManager()->registerRecipe($recipes);
+            $this->getServer()->getCraftingManager()->registerShapedRecipe($recipes);
         }
 	}
 }
