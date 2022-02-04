@@ -13,6 +13,8 @@ use pocketmine\data\bedrock\EnchantmentIdMap;
 use DaPigGuy\PiggyCustomEnchants\{CustomEnchantManager,PiggyCustomEnchants,utils\Utils};
 
 class Main extends PluginBase { 
+	
+	public $ce;
 
     public function onLoad() : void 
 	{
