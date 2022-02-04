@@ -5,5 +5,5 @@ branches:
 projects:
   CustomCraftDraz:
     path: ""
-    icon: "meta/customcraft.png"
+    icon: "meta\CustomCraft.png"
 ...
