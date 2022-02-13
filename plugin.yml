@@ -1,5 +1,5 @@
 name: CustomCraftDraz
 author: [YTBJero, DragoVN]
 version: 1.0.4
-api: [4.0.0]
+api: 4.0.0
 main: CustomCraft\Main
