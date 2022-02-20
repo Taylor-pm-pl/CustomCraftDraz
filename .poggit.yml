@@ -6,4 +6,6 @@ projects:
   CustomCraftDraz:
     path: ""
     icon: icon.gif
+    lint:
+      phpstan: false
 ...
