@@ -39,6 +39,7 @@ class Main extends PluginBase {
 
 	public function getCEnchantment(string $name, $item, int $level) {
 		$items = LegacyStringToItemParser::getInstance()->parse($item[0]);
+		// @phpstan-ignore-line
 		$enchant = CustomEnchantManager::getEnchantmentByName($name);
 		if ($enchant === null) {
 			$this->getLogger()->warning('CE is ' . $name . ' with level ' . $level . ' name is null!');
@@ -48,6 +49,7 @@ class Main extends PluginBase {
 			$this->getLogger()->warning('CE is ' . $name . ' with level' . $level . ' max level is ' . $enchant->getMaxLevel());
 			return;
 		}
+		// @phpstan-ignore-line
 		if (!Utils::checkEnchantIncompatibilities($items, $enchant)) {
 			$this->getLogger()->warning('CE is ' . $name . ' with level ' . $level . 'This enchant is not compatible with another enchant.');
 			return;

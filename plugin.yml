@@ -7,4 +7,5 @@ src-namespace-prefix: CustomCraft
 authors:
   - YTBJero
   - DragoVN
+softdepend: [PiggyCustomEnchants]
 ...
