@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CustomCraft;
 
 use pocketmine\item\Item;
