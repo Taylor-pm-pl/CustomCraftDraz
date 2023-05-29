@@ -1,3 +1,4 @@
+[![Discord](https://img.shields.io/discord/1100650029573738508.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/yAhsgskaGy)
 # CustomCraftDraz
 - One plugin custom craft for pmmp 
 - Email: nguyenhieucoder47@gmail.com
