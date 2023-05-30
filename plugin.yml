@@ -3,9 +3,9 @@ name: CustomCraftDraz
 version: 1.0.4
 main: CustomCraft\Main
 api: 4.0.0
-src-namespace-prefix: CustomCraft
+author: VennV
 authors:
   - YTBJero
-  - DragoVN
+  - NhanAZ
 softdepend: [PiggyCustomEnchants]
 ...
