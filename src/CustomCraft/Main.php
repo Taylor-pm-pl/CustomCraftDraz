@@ -8,15 +8,11 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\crafting\ShapedRecipe;
 use pocketmine\data\bedrock\EnchantmentIdMap;
 use pocketmine\item\Item;
-use pocketmine\item\ItemFactory;
 use pocketmine\item\LegacyStringToItemParser;
-use pocketmine\item\enchantment\Enchantment;
 use pocketmine\item\enchantment\EnchantmentInstance;
-use pocketmine\item\enchantment\StringToEnchantmentParser;
 use DaPigGuy\PiggyCustomEnchants\utils\Utils;
 use DaPigGuy\PiggyCustomEnchants\PiggyCustomEnchants;
 use DaPigGuy\PiggyCustomEnchants\CustomEnchantManager;
-
 class Main extends PluginBase {
 
 	public function onEnable(): void {
